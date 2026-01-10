@@ -1,0 +1,47 @@
+.container {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 5%;
+  background-color: #f8f9fa;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.feature-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 60px 5%;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
