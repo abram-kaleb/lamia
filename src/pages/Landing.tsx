@@ -6,24 +6,24 @@ export default function Landing() {
 
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900">
-
+            {/* Navigation */}
             <nav className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 bg-white/80 backdrop-blur-md border-b border-slate-200">
                 <div className="flex items-center gap-2">
                     <div className="bg-blue-600 p-2 rounded-lg text-white">
                         <Anchor size={24} />
                     </div>
-                    <span className="text-xl font-bold tracking-tight">Lamia <span className="text-blue-600">v1_airn</span></span>
+                    <span className="text-xl font-bold tracking-tight">Lamia <span className="text-blue-600">v1.1_brin</span></span>
                 </div>
 
                 <button
-                    onClick={() => navigate("/login")}
-                    className="bg-blue-600 text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 transition-all active:scale-95"
+                    onClick={() => navigate("/login")} // Ubah dari /dashboard ke /login
+                    className="group flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-blue-700 transition-all shadow-md shadow-blue-500/20 active:scale-95"
                 >
                     Login to Dashboard
                 </button>
             </nav>
 
-
+            {/* Hero Section */}
             <header className="relative pt-20 pb-32 px-8 text-center">
                 <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-8">
                     The Operating System for <br />
@@ -44,7 +44,7 @@ export default function Landing() {
                 </div>
             </header>
 
-
+            {/* Features Section */}
             <section className="py-24 px-8 max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
                 <FeatureCard
                     icon={<Ship className="text-blue-600" />}
@@ -66,6 +66,7 @@ export default function Landing() {
     );
 }
 
+// Sub-komponen agar kode rapi
 function FeatureCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
     return (
         <div className="bg-white p-8 rounded-3xl border border-slate-100 hover:border-blue-200 transition-all shadow-sm">

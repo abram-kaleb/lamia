@@ -1,17 +1,13 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import React from "react";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 
-const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
-  const isAuthenticated = localStorage.getItem("isLoggedIn") === "true";
-
-  if (!isAuthenticated) {
-
-    return <Navigate replace to="/login" />;
-  }
-
-  return children;
+// Proteksi Sederhana
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+  const isAuth = localStorage.getItem("isLoggedIn") === "true";
+  return isAuth ? <>{children}</> : <Navigate to="/login" replace />;
 };
 
 export default function App() {
@@ -20,7 +16,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
-
         <Route
           path="/dashboard"
           element={
@@ -29,6 +24,8 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+        {/* Jika nyasar, balik ke Landing */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
